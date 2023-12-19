@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
+
+<a th:href="@{ajout}" class="btn-success">Ajouter</a>
+
+<table align="center" border="2"  class="table">
+
+<tr   class="p-3 mb-2 bg-info text-white">
+  <td> id :</td>
+  <td> nom :</td>
+  <td> description:</td>
+  <td> prix:</td>
+  <td>suppression</td> 
+  <td>modification</td>
+  
+</tr>
+
+<tr th:each= "p:${Produits}"> 
+<td th:text="${p.id}"></td>
+<td th:text="${p.nom}"></td>
+<td th:text="${p.description}"></td>
+<td th:text="${p.prix}"></td>
+<td><a  class="btn btn-danger" th:href="@{/produit/{id}  (id=${p.id}) }" >Supprimer</a></td>
+<td><a  class="btn btn-success" th:href="@{/produit/{id}  (id=${p.id}) }" >Modifier</a></td>
+
+</tr>
+
+</table>

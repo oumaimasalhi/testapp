@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<h1 align="center">Hello from Client</h1>
+
+<form method="POST" th:action="@{/produit/update"} th:object="${p}">
+   
+   <div class="form-row">
+    <div class="col">
+   ID :<input disabled type="number" class="form-control"  th:field="*{id}" placeholder="First name" required="number" name="id">
+    </div>
+   </div>
+  <div class="form-row">
+    <div class="col">
+   Nom :<input type="text" class="form-control"  th:field="*{nom}" placeholder="First name" required="text" name="nom">
+    </div>
+   </div>
+   
+    <div class="form-row">
+    <div class="col">
+    Description : <input type="text" class="form-control"  th:field="*{description}" placeholder="Description de produit" required="text" name="prenom">
+    </div>
+    </div>
+    
+    
+    <div class="form-row">
+    Prix:<input type="text" class="form-control" th:field="*{prix}" placeholder="prix" required="text" name="prix">
+    </div>
+  <button type="submit" class="btn btn-success">Update</button>
+</form>
